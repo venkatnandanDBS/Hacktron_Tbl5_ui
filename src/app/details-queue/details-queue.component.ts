@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from "../service/user.service";
+import {QueueService} from "../service/queue.service";
 import {Router} from "@angular/router";
 import {Queue} from "../model/user.model";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
@@ -7,14 +7,14 @@ import {first} from "rxjs/operators";
 
 @Component({
   selector: 'app-edit-user',
-  templateUrl: './edit-user.component.html',
-  styleUrls: ['./edit-user.component.css']
+  templateUrl: './details-queue.component.html',
+  styleUrls: ['./details-queue.component.css']
 })
-export class EditUserComponent implements OnInit {
+export class DetailsQueueComponent implements OnInit {
 
   queue: Queue;
   editForm: FormGroup;
-  constructor(private formBuilder: FormBuilder,private router: Router, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder,private router: Router, private userService: QueueService) { }
 
   ngOnInit() {
     let userId = localStorage.getItem("editUserId");

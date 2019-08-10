@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {UserService} from "../service/user.service";
-import {first} from "rxjs/operators";
+import {QueueService} from "../service/queue.service";
 import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-user',
-  templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css']
+  templateUrl: './add-queue.component.html',
+  styleUrls: ['./add-queue.component.css']
 })
-export class AddUserComponent implements OnInit {
+export class AddQueueComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder,private router: Router, private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder,private router: Router, private userService: QueueService) { }
 
   addForm: FormGroup;
 

@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
-import {UserService} from "../service/user.service";
+import {QueueService} from "../service/queue.service";
 import {Queue} from "../model/user.model";
 
 @Component({
   selector: 'app-list-user',
-  templateUrl: './list-user.component.html',
-  styleUrls: ['./list-user.component.css']
+  templateUrl: './list-queue.component.html',
+  styleUrls: ['./list-queue.component.css']
 })
-export class ListUserComponent implements OnInit {
+export class ListQueueComponent implements OnInit {
 
   queues: Queue[];
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, private userService: QueueService) { }
 
   ngOnInit() {
     this.userService.getUsers()

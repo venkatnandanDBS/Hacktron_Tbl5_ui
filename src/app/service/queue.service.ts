@@ -4,17 +4,17 @@ import {Queue} from "../model/user.model";
 import { of } from "rxjs";
 
 @Injectable()
-export class UserService {
+export class QueueService {
   constructor(private http: HttpClient) { }
   baseUrl: string = 'http://localhost:8080/user-portal/users';
  
    fakeUsers:Queue[]=[];
 
   getUsers() {
-    this.fakeUsers = [{queueId: "1", queueName: 'Dhiraj'},
-     {queueId: "2", queueName: 'Tom'},
-     {queueId: "3", queueName: 'Hary'},
-     {queueId: "4", queueName: 'praks'},
+    this.fakeUsers = [{queueId: "1", queueName: 'Dhiraj', noOfMessage: "10"},
+     {queueId: "2", queueName: 'Tom', noOfMessage: "10"},
+     {queueId: "3", queueName: 'Hary', noOfMessage: "10"},
+     {queueId: "4", queueName: 'praks', noOfMessage: "10"},
    ];
    return of(this.fakeUsers);
     /* return this.http.get<User[]>(this.baseUrl); */

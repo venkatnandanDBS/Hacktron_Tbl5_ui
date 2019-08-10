@@ -7,18 +7,18 @@ import {routing} from "./app.routing";
 import {AuthenticationService} from "./service/auth.service";
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { AddUserComponent } from './add-user/add-user.component';
-import { EditUserComponent } from './edit-user/edit-user.component';
-import {ListUserComponent} from "./list-user/list-user.component";
-import {UserService} from "./service/user.service";
+import { AddQueueComponent } from './add-queue/add-queue.component';
+import { DetailsQueueComponent } from './details-queue/details-queue.component';
+import {ListQueueComponent} from "./list-queue/list-queue.component";
+import {QueueService} from "./service/queue.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    ListUserComponent,
-    AddUserComponent,
-    EditUserComponent
+    ListQueueComponent,
+    AddQueueComponent,
+    DetailsQueueComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,7 @@ import {UserService} from "./service/user.service";
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthenticationService, UserService],
+  providers: [AuthenticationService, QueueService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
