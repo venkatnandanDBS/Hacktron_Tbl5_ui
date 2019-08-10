@@ -9,14 +9,16 @@ export class MessageService {
   constructor(private http: HttpClient) { }
   baseUrl: string = 'http://localhost:8080/user-portal/users';
  
-   mckMessage:Message[];
+   mckMessage:Message[]=[];
 
   getMessages() {
-    this.mckMessage = [{queueId: "1", message: 'First Message'},
-     {queueId: "2", message: 'Second Message'},
-     {queueId: "3", message: 'Third Message'},
-     {queueId: "4", message: 'Fourth Message'},
-   ];
+     if(this.mckMessage.length==0){
+        this.mckMessage = [{queueId: "1", message: 'First Message'},
+        {queueId: "1", message: 'Second Message'},
+        {queueId: "1", message: 'Third Message'},
+        {queueId: "1", message: 'Fourth Message'},
+      ];
+     } 
    return of(this.mckMessage);
     /* return this.http.get<User[]>(this.baseUrl); */
   }

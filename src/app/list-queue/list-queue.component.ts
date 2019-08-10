@@ -22,7 +22,7 @@ export class ListQueueComponent implements OnInit {
   }
 
   deleteUser(queue: Queue): void {
-    this.userService.deleteUser(queue.queueId)
+    this.userService.deleteQueue(queue.queueId)
       .subscribe( data => {
         this.queues = this.queues.filter(u => u !== queue);
       })

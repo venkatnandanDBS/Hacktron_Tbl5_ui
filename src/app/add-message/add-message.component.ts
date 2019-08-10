@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MessageService } from '../service/message.service';
 
 @Component({
   selector: 'app-add-message',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddMessageComponent implements OnInit {
 
-  constructor() { }
+  addForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder,private router: Router, private messageService: MessageService) { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+    this.messageService.createMessage(this.addForm.value)
+      .subscribe( data => {
+        this.router.navigate(['list-queue']);
+      });
   }
 
 }

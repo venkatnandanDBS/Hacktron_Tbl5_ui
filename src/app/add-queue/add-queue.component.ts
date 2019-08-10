@@ -10,7 +10,7 @@ import {Router} from "@angular/router";
 })
 export class AddQueueComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder,private router: Router, private userService: QueueService) { }
+  constructor(private formBuilder: FormBuilder,private router: Router, private messageService: QueueService) { }
 
   addForm: FormGroup;
 
@@ -24,7 +24,7 @@ export class AddQueueComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userService.createQueue(this.addForm.value)
+    this.messageService.createQueue(this.addForm.value)
       .subscribe( data => {
         this.router.navigate(['list-queue']);
       });

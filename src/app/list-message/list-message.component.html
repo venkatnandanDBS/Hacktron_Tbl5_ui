@@ -4,13 +4,11 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th>QueueId</th>
       <th>Message Name</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let message of messages">
-      <td class="hidden">{{message.queueId}}</td>
       <td>{{message.message}}</td>
       <td><button class="btn btn-danger" (click)="deleteMessage(message)"> Delete</button>
     </tr>
