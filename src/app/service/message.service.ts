@@ -9,7 +9,7 @@ export class MessageService {
   constructor(private http: HttpClient) { }
   baseUrl: string = 'http://localhost:8080/user-portal/users';
  
-   mckMessage:Message[]=[];
+   mckMessage:Message[];
 
   getMessages() {
     this.mckMessage = [{queueId: "1", message: 'First Message'},

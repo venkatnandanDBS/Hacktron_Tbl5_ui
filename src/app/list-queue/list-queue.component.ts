@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {QueueService} from "../service/queue.service";
-import {Queue} from "../model/user.model";
+import {Queue} from "../model/queue.model";
 
 @Component({
   selector: 'app-list-user',
@@ -34,7 +34,7 @@ export class ListQueueComponent implements OnInit {
     this.router.navigate(['list-message']);
   };
 
-  addUser(): void {
-    this.router.navigate(['add-user']);
+  addQueue(): void {
+    this.router.navigate(['add-queue']);
   };
 }

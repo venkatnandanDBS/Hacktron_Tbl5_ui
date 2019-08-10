@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Queue} from "../model/user.model";
+import {Queue} from "../model/queue.model";
 import { of } from "rxjs";
 
 @Injectable()
@@ -11,11 +11,13 @@ export class QueueService {
    fakeUsers:Queue[]=[];
 
   getUsers() {
-    this.fakeUsers = [{queueId: "1", queueName: 'Dhiraj', noOfMessage: "10"},
+    if(this.fakeUsers.length==0){
+      this.fakeUsers = [{queueId: "1", queueName: 'Dhiraj', noOfMessage: "10"},
      {queueId: "2", queueName: 'Tom', noOfMessage: "10"},
      {queueId: "3", queueName: 'Hary', noOfMessage: "10"},
      {queueId: "4", queueName: 'praks', noOfMessage: "10"},
    ];
+    }
    return of(this.fakeUsers);
     /* return this.http.get<User[]>(this.baseUrl); */
   }
@@ -24,8 +26,8 @@ export class QueueService {
     return this.http.get<Queue>(this.baseUrl + '/' + id);
   }
 
-  createUser(queue: Queue) {
-    /* return this.http.post(this.baseUrl, queue); */
+  createQueue(queue: Queue) {
+    /* return this.http.post(this.baseUrl, que  ue); */
     this.fakeUsers.push(queue);
     return of(this.fakeUsers);
   }

@@ -12,6 +12,7 @@ import { DetailsQueueComponent } from './details-queue/details-queue.component';
 import {ListQueueComponent} from "./list-queue/list-queue.component";
 import {QueueService} from "./service/queue.service";
 import { ListMessageComponent } from './list-message/list-message.component';
+import { MessageService } from './service/message.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ListMessageComponent } from './list-message/list-message.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AuthenticationService, QueueService],
+  providers: [AuthenticationService, QueueService,MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

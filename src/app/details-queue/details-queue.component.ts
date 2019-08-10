@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {QueueService} from "../service/queue.service";
 import {Router} from "@angular/router";
-import {Queue} from "../model/user.model";
+import {Queue} from "../model/queue.model";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {first} from "rxjs/operators";
 

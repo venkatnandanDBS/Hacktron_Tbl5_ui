@@ -17,18 +17,16 @@ export class AddQueueComponent implements OnInit {
   ngOnInit() {
 
     this.addForm = this.formBuilder.group({
-      id: [],
-      email: ['', Validators.required],
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required]
+      queueName: [],
+      noOfMessage: ['', Validators.required]
     });
 
   }
 
   onSubmit() {
-    this.userService.createUser(this.addForm.value)
+    this.userService.createQueue(this.addForm.value)
       .subscribe( data => {
-        this.router.navigate(['list-user']);
+        this.router.navigate(['list-queue']);
       });
   }
 
