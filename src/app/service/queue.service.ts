@@ -10,12 +10,16 @@ export class QueueService {
 
    fakeUsers:Queue[]=[];
 
+   queue: Queue;
+
   getUsers() {
-    this.fakeUsers = [{queueId: "1", queueName: 'Dhiraj', noOfMessage: "10"},
+    if(this.fakeUsers.length==0){
+      this.fakeUsers = [{queueId: "1", queueName: 'Dhiraj', noOfMessage: "10"},
      {queueId: "2", queueName: 'Tom', noOfMessage: "10"},
      {queueId: "3", queueName: 'Hary', noOfMessage: "10"},
      {queueId: "4", queueName: 'praks', noOfMessage: "10"},
    ];
+    }
    return of(this.fakeUsers);
   }
 
@@ -23,8 +27,9 @@ export class QueueService {
     return this.http.get<Queue>(this.baseUrl + '/' + id);
   }
 
-  createUser(queue: Queue) {
-    /* return this.http.post(this.baseUrl, queue); */
+  createQueue(queue: Queue) {
+    /* return this.http.post(this.baseUrl, que  ue); */
+    queue.queueId=String(this.fakeUsers.length+1);
     this.fakeUsers.push(queue);
     return of(this.fakeUsers);
   }
@@ -33,7 +38,13 @@ export class QueueService {
     return this.http.put(this.baseUrl + '/' + queue.queueId, queue);
   }
 
-  deleteUser(id: String) {
-    return this.http.delete(this.baseUrl + '/' + id);
+  deleteQueue(queueName: String) {
+   /*  this.queue=this.fakeUsers.filter(item => item.queueName == queueName);
+
+    const index: number = this.fakeUsers.indexOf(queueName);
+    if (index !== -1) {
+        this.data.splice(index, 1);
+    }   */   
+    return this.http.delete(this.baseUrl + '/' + queueName);
   }
 }

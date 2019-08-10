@@ -14,6 +14,8 @@ import {QueueService} from "./service/queue.service";
 import { ListMessageComponent } from './list-message/list-message.component';
 import { SimpleNotificationsModule } from 'angular2-notifications';
 import {NotificationBuilderService} from "./service/NotificationService";
+import { MessageService } from './service/message.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,7 @@ import {NotificationBuilderService} from "./service/NotificationService";
     HttpClientModule,
     SimpleNotificationsModule.forRoot()
   ],
-  providers: [AuthenticationService, QueueService, NotificationBuilderService],
+  providers: [AuthenticationService, QueueService,MessageService,NotificationBuilderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

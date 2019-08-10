@@ -1,1 +1,17 @@
-
+<div class="col-md-6">
+  <h2> Message Details</h2>
+  <button class="btn btn-success" (click)="addUser()">Add Queue</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Message Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let message of messages">
+      <td>{{message.message}}</td>
+      <td><button class="btn btn-danger" (click)="deleteMessage(message)"> Delete</button>
+    </tr>
+    </tbody>
+  </table>
+</div>

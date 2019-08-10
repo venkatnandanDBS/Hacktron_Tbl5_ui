@@ -7,8 +7,8 @@ import { ListMessageComponent } from './list-message/list-message.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'add-user', component: AddQueueComponent },
-  { path: 'list-user', component: ListQueueComponent },
+  { path: 'add-queue', component: AddQueueComponent },
+  { path: 'list-queue', component: ListQueueComponent },
   { path: 'edit-user', component: DetailsQueueComponent },
   { path: 'list-message', component: ListMessageComponent },
   {path : '', component : LoginComponent}
