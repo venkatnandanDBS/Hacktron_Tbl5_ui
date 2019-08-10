@@ -1,0 +1,21 @@
+<div class="col-md-6">
+  <h2> Queue Details</h2>
+  <button class="btn btn-danger" (click)="addUser()">Add Queue</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>QueueId</th>
+      <th>QueueName</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let queue of queues">
+      <td class="hidden">{{queue.queueId}}</td>
+      <td>{{queue.queueName}}</td>
+      <td><button class="btn btn-danger" (click)="deleteUser(queue)"> Delete</button>
+        <button class="btn btn-danger" (click)="editUser(queue)" style="margin-left: 20px;"> Show Details</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
