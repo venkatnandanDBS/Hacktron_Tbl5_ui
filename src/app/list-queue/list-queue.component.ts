@@ -28,10 +28,10 @@ export class ListQueueComponent implements OnInit {
       })
   };
 
-  editUser(queue: Queue): void {
+  detailsQueue(queue: Queue): void {
     localStorage.removeItem("editUserId");
     localStorage.setItem("editUserId", queue.queueId.toString());
-    this.router.navigate(['edit-user']);
+    this.router.navigate(['list-message']);
   };
 
   addUser(): void {

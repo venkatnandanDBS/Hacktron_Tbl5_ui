@@ -11,6 +11,7 @@ import { AddQueueComponent } from './add-queue/add-queue.component';
 import { DetailsQueueComponent } from './details-queue/details-queue.component';
 import {ListQueueComponent} from "./list-queue/list-queue.component";
 import {QueueService} from "./service/queue.service";
+import { ListMessageComponent } from './list-message/list-message.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {QueueService} from "./service/queue.service";
     LoginComponent,
     ListQueueComponent,
     AddQueueComponent,
-    DetailsQueueComponent
+    DetailsQueueComponent,
+    ListMessageComponent
   ],
   imports: [
     BrowserModule,
