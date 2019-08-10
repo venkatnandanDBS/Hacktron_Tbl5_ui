@@ -12,7 +12,8 @@ import { DetailsQueueComponent } from './details-queue/details-queue.component';
 import {ListQueueComponent} from "./list-queue/list-queue.component";
 import {QueueService} from "./service/queue.service";
 import { ListMessageComponent } from './list-message/list-message.component';
-
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import {NotificationBuilderService} from "./service/NotificationService";
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,9 +27,10 @@ import { ListMessageComponent } from './list-message/list-message.component';
     BrowserModule,
     routing,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SimpleNotificationsModule.forRoot()
   ],
-  providers: [AuthenticationService, QueueService],
+  providers: [AuthenticationService, QueueService, NotificationBuilderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

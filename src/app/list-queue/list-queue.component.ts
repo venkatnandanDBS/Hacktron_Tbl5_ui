@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {QueueService} from "../service/queue.service";
-import {Queue} from "../model/user.model";
+import {Queue} from "../model/queue.model";
 
 @Component({
   selector: 'app-list-user',

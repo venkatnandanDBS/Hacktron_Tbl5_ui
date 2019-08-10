@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {QueueService} from "../service/queue.service";
 import {Router} from "@angular/router";
-
+import {NotificationBuilderService} from "./../service/NotificationService";
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-queue.component.html',
@@ -10,7 +10,8 @@ import {Router} from "@angular/router";
 })
 export class AddQueueComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder,private router: Router, private userService: QueueService) { }
+  constructor(private formBuilder: FormBuilder,
+    private router: Router, private userService: QueueService, private notificationService: NotificationBuilderService) { }
 
   addForm: FormGroup;
 
@@ -29,6 +30,8 @@ export class AddQueueComponent implements OnInit {
     this.userService.createUser(this.addForm.value)
       .subscribe( data => {
         this.router.navigate(['list-user']);
+      },(err)=>{
+        this.notificationService.createDataSaveFailed(err.code,err.message);
       });
   }
 

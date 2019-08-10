@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Queue} from "../model/user.model";
+import {Queue} from "../model/queue.model";
 import { of } from "rxjs";
 
 @Injectable()
 export class QueueService {
   constructor(private http: HttpClient) { }
   baseUrl: string = 'http://localhost:8080/user-portal/users';
- 
+
    fakeUsers:Queue[]=[];
 
   getUsers() {
@@ -17,7 +17,6 @@ export class QueueService {
      {queueId: "4", queueName: 'praks', noOfMessage: "10"},
    ];
    return of(this.fakeUsers);
-    /* return this.http.get<User[]>(this.baseUrl); */
   }
 
   getUserById(id: number) {
